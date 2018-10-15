@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "showcase:basic": "cd ./basic/ && yarn showcase"
+  },
+  "devDependencies": {
+    "lerna": "^3.3.0"
+  }
+}
