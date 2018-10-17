@@ -6,12 +6,8 @@
   "homepage": "https://github.com/ui-fi/packages#readme",
   "license": "ISC",
   "main": "library/exports.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
   "files": [
-    "lib"
+    "library"
   ],
   "publishConfig": {
     "access": "public"
@@ -21,9 +17,17 @@
     "url": "git+https://github.com/ui-fi/packages.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "tsc",
+    "lint": "tslint --config ../tslint.json ./source/**/*.ts?",
+    "prepublish": "yarn build && yarn lint"
   },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
+  },
+  "dependencies": {
+    "react": "^16.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.18"
   }
 }
