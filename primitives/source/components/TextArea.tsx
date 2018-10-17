@@ -12,25 +12,26 @@ import React, { Attributes } from 'react';
 /*      DECLARATIONS                                                                                                  */
 /**********************************************************************************************************************/
 
-interface TextAreaProperties {
+interface ITextAreaProperties {
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     onClear?: () => void;
     onFill?: () => void;
 };
 
-interface TextInputState {
+interface ITextInputState {
     value?: string;
 }
 
+/* tslint:disable-next-line:no-empty */
 const NO_OP_EVENT_TRIGGER = (...args: any[]) => {};
 
-class TextArea extends React.Component<TextAreaProperties, TextInputState> {
-    constructor(props: TextAreaProperties) {
+class TextArea extends React.Component<ITextAreaProperties, ITextInputState> {
+    constructor(props: ITextAreaProperties) {
         super(props);
 
         this.state = {
-            value: props.value
+            value: props.value,
         };
 
         this._clearEventTrigger = props.onClear || NO_OP_EVENT_TRIGGER;
@@ -48,10 +49,10 @@ class TextArea extends React.Component<TextAreaProperties, TextInputState> {
 
     private _handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
         const previousValue = this.state.value;
-        
-        this.setState(state => {
-            value: event.target.value
-        }, () => {
+
+        this.setState((state: ITextInputState) => ({
+            value: event.target.value,
+        }), () => {
             this._clearEventTrigger(!!previousValue && !event.target.value);
             this._fillEventTrigger(!previousValue && !!event.target.value);
             this._changeEventTrigger(event);
@@ -68,4 +69,4 @@ class TextArea extends React.Component<TextAreaProperties, TextInputState> {
 /**********************************************************************************************************************/
 /*      EXPORTS                                                                                                       */
 /**********************************************************************************************************************/
-export { TextArea, TextAreaProperties };
+export { TextArea, ITextAreaProperties };

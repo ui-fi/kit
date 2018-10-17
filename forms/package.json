@@ -21,7 +21,9 @@
     "url": "git+https://github.com/ui-fi/packages.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "tsc",
+    "lint": "tslint --config ../tslint.json ./source/**/*.ts?",
+    "prepublish": "yarn build && yarn lint"
   },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
@@ -30,6 +32,10 @@
     "react": "^16.5.2"
   },
   "devDependencies": {
-    "@types/react": "^16.4.18"
+    "@types/react": "^16.4.18",
+    "grunt": "^1.0.3",
+    "grunt-ts": "^6.0.0-beta.21",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.1.3"
   }
 }

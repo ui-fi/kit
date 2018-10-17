@@ -5,7 +5,24 @@
     "jsRules": {},
     "rules": {
         "quotemark": [true, "single", "jsx-double"],
-        "align": [true, "statements", "members", "elements"]
+        "align": [true, "statements", "members", "elements"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+        "member-ordering": [
+            true,
+            {
+              "order": [
+                "public-static-field",
+                "public-instance-field",
+                "public-constructor",
+                "private-static-field",
+                "private-constructor",
+                "public-instance-method",
+                "protected-instance-method",
+                "private-instance-method",
+                "private-instance-field"
+              ]
+            }
+          ]
     },
     "rulesDirectory": []
 }

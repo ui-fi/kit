@@ -3,7 +3,7 @@ import React from 'react';
 type DecorationProperties = {
     prefix?: any;
     postfix?: any;
-}
+};
 
 class Decoration extends React.Component<DecorationProperties> {
     constructor(props: DecorationProperties) {
@@ -14,7 +14,7 @@ class Decoration extends React.Component<DecorationProperties> {
         return [
             this.props.prefix,
             this.props.children,
-            this.props.postfix
+            this.props.postfix,
         ];
     }
 }

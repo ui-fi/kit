@@ -25,5 +25,11 @@
   },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-ts": "^6.0.0-beta.21",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.1.3"
   }
 }

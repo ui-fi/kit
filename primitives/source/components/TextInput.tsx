@@ -14,7 +14,7 @@ import React, { Attributes } from 'react';
 
 type TextInputType = 'text' | 'password';
 
-interface TextInputProperties {
+interface ITextInputProperties {
     type?: TextInputType;
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -22,18 +22,19 @@ interface TextInputProperties {
     onFill?: () => void;
 };
 
-interface TextInputState {
+interface ITextInputState {
     value?: string;
 }
 
+/* tslint:disable-next-line:no-empty */
 const NO_OP_EVENT_TRIGGER = (...args: any[]) => {};
 
-class TextInput extends React.Component<TextInputProperties, TextInputState> {
-    constructor(props: TextInputProperties) {
+class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
+    constructor(props: ITextInputProperties) {
         super(props);
 
         this.state = {
-            value: props.value
+            value: props.value,
         };
 
         this._clearEventTrigger = props.onClear || NO_OP_EVENT_TRIGGER;
@@ -52,10 +53,10 @@ class TextInput extends React.Component<TextInputProperties, TextInputState> {
 
     private _handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
         const previousValue = this.state.value;
-        
-        this.setState(state => {
-            value: event.target.value
-        }, () => {
+
+        this.setState((state: ITextInputState) => ({
+            value: event.target.value,
+        }), () => {
             this._clearEventTrigger(!!previousValue && !event.target.value);
             this._fillEventTrigger(!previousValue && !!event.target.value);
             this._changeEventTrigger(event);
@@ -72,4 +73,4 @@ class TextInput extends React.Component<TextInputProperties, TextInputState> {
 /**********************************************************************************************************************/
 /*      EXPORTS                                                                                                       */
 /**********************************************************************************************************************/
-export { TextInput, TextInputProperties, TextInputType };
+export { TextInput, ITextInputProperties, TextInputType };
