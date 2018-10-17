@@ -15,9 +15,9 @@ class Button extends React.Component<ButtonProperties> {
 
     public render(): React.ReactNode {
         return (
-            <div 
-                className= { this.props.classes ? classnames('ui-fi__button', this.props.classes) : 'ui-fi__button' } 
-                style={ this.props.style } 
+            <div
+                className= { this.props.classes ? classnames('ui-fi__button', this.props.classes) : 'ui-fi__button' }
+                style={ this.props.style }
                 onClick={ this.props.onClick }>
                 { this.props.caption }
             </div>

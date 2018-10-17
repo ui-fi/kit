@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
+    "lint": "lerna run lint",
     "showcase:basic": "cd ./basic/ && yarn showcase"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@ class LayoutSlot<T> extends React.Component<ILayoutSlotProperties<T>> {
         super(props);
     }
 
-    render(): React.ReactNode {
+    public render(): React.ReactNode {
         return this.props.elements && this.props.elements[this.props.id];
     }
 }

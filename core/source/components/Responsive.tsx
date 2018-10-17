@@ -1,7 +1,19 @@
+/**********************************************************************************************************************/
+/*      LINTER                                                                                                       */
+/**********************************************************************************************************************/
+/*  tslint:disable:max-classes-per-file */
+
+/**********************************************************************************************************************/
+/*      IMPORTS                                                                                                       */
+/**********************************************************************************************************************/
+//  React
 import React, { Attributes } from 'react';
 
 import classnames from 'classnames';
 
+/**********************************************************************************************************************/
+/*      DECLARATIONS                                                                                                  */
+/**********************************************************************************************************************/
 namespace Responsive {
     export type Breakpoint = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
 
@@ -9,7 +21,7 @@ namespace Responsive {
 
     export type ContextProperties = {
         breakpoint: Breakpoint;
-    }
+    };
 
     export class Context extends React.Component<ContextProperties> {
         constructor(props: ContextProperties) {
@@ -31,20 +43,24 @@ namespace Responsive {
                 <Consumer>
                     {
                         (b: Breakpoint): React.ReactNode => {
-                            return React.Children.map(this.props.children, ((c: React.ReactChild, i: number) => 
-                                (React.isValidElement(c) ? this._applyWithBreakpointClass(c, b) : c )))
+                            return React.Children.map(this.props.children, ((c: React.ReactChild, i: number) =>
+                                (React.isValidElement(c) ? this._applyBreakpointClass(c, b) : c )));
                         }
                     }
                 </Consumer>
             );
         }
 
-        private _applyWithBreakpointClass(element: React.ReactElement<React.HTMLAttributes<any>>, breakpoint: Breakpoint): React.ReactNode {
+        private _applyBreakpointClass(element: React.ReactElement<React.HTMLAttributes<any>>
+            , breakpoint: Breakpoint): React.ReactNode {
             return React.cloneElement(element, {
-                className: classnames(element.props.className, `ui-fi__responsive-breakpoint-${breakpoint}`) 
+                className: classnames(element.props.className, `ui-fi__responsive-breakpoint-${breakpoint}`),
             });
         }
     }
 }
 
+/**********************************************************************************************************************/
+/*      EXPORTS                                                                                                       */
+/**********************************************************************************************************************/
 export default Responsive;
