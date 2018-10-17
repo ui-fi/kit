@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Responsive } from '@ui-fi/core';
 
-import { Button } from '../Button';
+import { Button } from './Button';
 
 class ResponsiveButton extends React.Component {
      public render(): React.ReactNode {
