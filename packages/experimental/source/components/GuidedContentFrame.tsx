@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Frame } from '@ui-fi/decorations';
+import { ContentFrame } from '@ui-fi/decorations';
 
 type ContentFrameWidthGuideValues = 'ultra-thin' | 'extra-thin' | 'thin' | 'medium'
     | 'thick' | 'extra-think' | 'ultra-thick';
@@ -48,9 +48,9 @@ class GuidedContentFrame extends React.Component<GuidedContentFrameProperties> {
             .map((s: string, i: number) => this._composeClassName(CLASS_NAME_PREFIX, s, this._width[i]));
 
         return (
-            <Frame classes={ classes }>
+            <ContentFrame classes={ classes }>
                 { this.props.children }
-            </Frame>
+            </ContentFrame>
         );
     }
 

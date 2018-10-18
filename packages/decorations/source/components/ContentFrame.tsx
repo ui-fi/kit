@@ -8,7 +8,7 @@ interface IFrameProperties {
     classes?: string | string[];
 }
 
-class Frame extends React.Component<IFrameProperties> {
+class ContentFrame extends React.Component<IFrameProperties> {
     public render(): React.ReactNode {
         return (
             <div className={ classnames('ui-fi__frame__outer', this.props.classes) }>
@@ -20,4 +20,4 @@ class Frame extends React.Component<IFrameProperties> {
     }
 }
 
-export { Frame };
+export { ContentFrame };
