@@ -1,0 +1,25 @@
+{
+  "name": "@ui-fi/experimental",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
+  "homepage": "https://github.com/ui-fi/packages#readme",
+  "license": "ISC",
+  "main": "library/exports.js",
+  "files": [
+    "library"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ui-fi/packages.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ui-fi/packages/issues"
+  }
+}
