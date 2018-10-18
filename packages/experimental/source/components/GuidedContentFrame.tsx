@@ -2,10 +2,8 @@ import React from 'react';
 
 import { ContentFrame } from '@ui-fi/decorations';
 
-type ContentFrameWidthGuideValues = 'ultra-thin' | 'extra-thin' | 'thin' | 'medium'
-    | 'thick' | 'extra-think' | 'ultra-thick';
-
-type ContentFrameWidthGuide = ContentFrameWidthGuideValues;
+type ContentFrameWidthGuide = 'ultra-thin' | 'extra-thin' | 'thin' | 'medium'
+| 'thick' | 'extra-think' | 'ultra-thick';
 
 type UniformContentFrameWidth = ContentFrameWidthGuide | [ContentFrameWidthGuide];
 type TwoPartContentFrameWidth = [ContentFrameWidthGuide, ContentFrameWidthGuide];
