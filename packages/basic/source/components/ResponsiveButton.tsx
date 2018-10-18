@@ -1,6 +1,6 @@
 import React from 'react';
 
-//import { Responsive } from '@ui-fi/core';
+// import { Responsive } from '@ui-fi/core';
 
 // import { Button } from './Button';
 

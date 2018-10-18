@@ -23,5 +23,13 @@
   },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
+  },
+  "dependencies": {
+    "@ui-fi/basic": "^0.1.0",
+    "@ui-fi/decorations": "^0.1.0",
+    "react": "^16.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.18"
   }
 }
