@@ -6,7 +6,7 @@ type Style = {
 };
 
 const cssPropertiesToString = (properties: CSSProperties): string => {
-    throw new Error('Not implemented');
+    throw new Error('Not implemented'); 
 };
 
 const compileStyles = (...styles: Style[]): string => {
