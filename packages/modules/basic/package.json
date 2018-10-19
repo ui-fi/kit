@@ -17,8 +17,8 @@
     "url": "git+https://github.com/ui-fi/packages.git"
   },
   "scripts": {
-    "build": "grunt build --base . --gruntfile ../../tools/gruntfile.js",
-    "lint": "tslint --config ../../tools/settings/tslint.json ./source/**/*.ts?",
+    "build": "grunt build --base . --gruntfile ../../../tools/gruntfile.js",
+    "lint": "tslint --config ../../../tools/settings/tslint.json ./source/**/*.ts?",
     "prepare": "yarn build && yarn lint",
     "showcase": "webpack-dev-server --config=./showcase/webpack.config.babel.js --config-register=@babel/register --mode=development --hot"
   },

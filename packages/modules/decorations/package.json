@@ -1,5 +1,5 @@
 {
-  "name": "@ui-fi/primitives",
+  "name": "@ui-fi/decorations",
   "version": "0.1.1-beta.1+9311bb0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
@@ -17,12 +17,16 @@
     "url": "git+https://github.com/ui-fi/packages.git"
   },
   "scripts": {
-    "build": "grunt build --base . --gruntfile ../../tools/gruntfile.js",
-    "lint": "tslint --config ../../tools/settings/tslint.json ./source/**/*.ts?",
+    "build": "grunt build --base . --gruntfile ../../../tools/gruntfile.js",
+    "lint": "tslint --config ../../../tools/settings/tslint.json ./source/**/*.ts?",
     "prepare": "yarn build && yarn lint"
   },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.5.2"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.6",
@@ -30,10 +34,6 @@
     "grunt-ts": "^6.0.0-beta.21",
     "ts-lint": "^4.5.1",
     "typescript": "^3.1.3"
-  },
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "react": "^16.5.2"
   },
   "gitHead": "9311bb0f16b5442b8ab1ed8bd07fad7f697d512c"
 }
