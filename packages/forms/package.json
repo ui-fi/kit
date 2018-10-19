@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "tslint --config ../../tslint.json ./source/**/*.ts?",
+    "lint": "tslint --config ../../accessories/common/tslint.json ./source/**/*.ts?",
     "prepublish": "yarn build && yarn lint"
   },
   "bugs": {
