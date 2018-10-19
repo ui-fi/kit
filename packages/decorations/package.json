@@ -1,6 +1,6 @@
 {
   "name": "@ui-fi/decorations",
-  "version": "0.1.1-beta.0",
+  "version": "0.1.1-beta.1+9311bb0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
   "homepage": "https://github.com/ui-fi/packages#readme",
@@ -19,7 +19,7 @@
   "scripts": {
     "build": "grunt build --base . --gruntfile ../../tools/gruntfile.js",
     "lint": "tslint --config ../../tools/settings/tslint.json ./source/**/*.ts?",
-    "prepublish": "yarn build && yarn lint"
+    "prepare": "yarn build && yarn lint"
   },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
@@ -31,7 +31,9 @@
   "devDependencies": {
     "@types/classnames": "^2.2.6",
     "@types/react": "^16.4.18",
+    "grunt-ts": "^6.0.0-beta.21",
     "ts-lint": "^4.5.1",
     "typescript": "^3.1.3"
-  }
+  },
+  "gitHead": "9311bb0f16b5442b8ab1ed8bd07fad7f697d512c"
 }
