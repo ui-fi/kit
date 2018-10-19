@@ -6,15 +6,11 @@
   "homepage": "https://github.com/ui-fi/packages#readme",
   "license": "ISC",
   "main": "library/main.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
   "files": [
-    "lib"
+    "library"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   },
   "repository": {
     "type": "git",
