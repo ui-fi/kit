@@ -3,7 +3,7 @@ import React from 'react';
 import { ContentFrame } from '@ui-fi/decorations';
 
 type ContentFrameWidthGuide = 'ultra-thin' | 'extra-thin' | 'thin' | 'medium'
-| 'thick' | 'extra-think' | 'ultra-thick';
+    | 'thick' | 'extra-think' | 'ultra-thick';
 
 type UniformContentFrameWidth = ContentFrameWidthGuide | [ContentFrameWidthGuide];
 type TwoPartContentFrameWidth = [ContentFrameWidthGuide, ContentFrameWidthGuide];
@@ -16,7 +16,7 @@ type GuidedContentFrameProperties = {
     width?: ContentFrameWidth;
 };
 
-const CLASS_NAME_PREFIX = 'ui-fi__frame__width';
+const CLASS_NAME_PREFIX = 'ui-fi__content-frame__width';
 
 const UNIFORM_CLASS_NAME_SUFFIXES = ['uniform'];
 const TWO_PART_CLASS_NAME_SUFFIXES = ['vertical', 'horizontal'];
@@ -33,7 +33,7 @@ class GuidedContentFrame extends React.Component<GuidedContentFrameProperties> {
         super(props);
 
         //  Convert width to an array even when it is a scalar value or undefined
-        //  to make future operations involving with more straighforward.
+        //  to make future processing involving with more straighforward.
         this._width = this.props.width
             ? !Array.isArray(this.props.width)
                 ? [this.props.width]
@@ -62,8 +62,8 @@ class GuidedContentFrame extends React.Component<GuidedContentFrameProperties> {
         return suffixes;
     }
 
-    private _composeClassName(prefix: string, suffix: string, value: string): string {
-        return [prefix, suffix, value].join('__');
+    private _composeClassName(prefix: string, suffix: string, guide: string): string {
+        return [prefix, suffix, guide].join('__');
     }
 
     private _width: ContentFrameWidth;
