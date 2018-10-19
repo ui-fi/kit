@@ -7,6 +7,8 @@
     "showcase:basic": "cd ./basic/ && yarn showcase"
   },
   "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-ts": "^6.0.0-beta.21",
     "lerna": "^3.3.0"
   }
 }

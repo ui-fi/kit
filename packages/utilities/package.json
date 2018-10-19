@@ -17,11 +17,15 @@
     "url": "git+https://github.com/ui-fi/kit.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "grunt build --base . --gruntfile ../../tools/gruntfile.js",
     "lint": "tslint --config ../../tools/settings/tslint.json ./source/**/*.ts?",
     "prepublish": "yarn build && yarn lint"
   },
   "bugs": {
     "url": "https://github.com/ui-fi/kit/issues"
+  },
+  "devDependencies": {
+    "grunt-ts": "^6.0.0-beta.21",
+    "typescript": "^3.1.3"
   }
 }
