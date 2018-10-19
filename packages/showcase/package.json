@@ -16,15 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/ui-fi/packages.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
   "bugs": {
     "url": "https://github.com/ui-fi/packages/issues"
   },
   "devDependencies": {
     "grunt-ts": "^6.0.0-beta.21",
     "ts-lint": "^4.5.1",
+    "ts-node": "^7.0.1",
     "typescript": "^3.1.3"
   },
   "gitHead": "9311bb0f16b5442b8ab1ed8bd07fad7f697d512c",

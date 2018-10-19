@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "lint": "lerna run lint",
+    "test": "lerna run test",
     "publish:prepatch:beta": "lerna publish --preid beta prepatch",
     "publish:prepatch:canary": "lerna publish --preid beta --canary prepatch --npm-client npm",
     "publish:canary": "lerna publish --canary",
