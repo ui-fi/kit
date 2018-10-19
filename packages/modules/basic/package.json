@@ -19,7 +19,7 @@
   "scripts": {
     "build": "grunt build --base . --gruntfile ../../../tools/gruntfile.js",
     "lint": "tslint --config ../../../tools/settings/tslint.json ./source/**/*.ts?",
-    "prepare": "yarn build && yarn lint",
+    "prepare": "yarn build && yarn test && yarn lint",
     "showcase": "webpack-dev-server --config=./showcase/webpack.config.babel.js --config-register=@babel/register --mode=development --hot"
   },
   "bugs": {

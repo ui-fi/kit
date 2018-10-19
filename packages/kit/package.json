@@ -19,7 +19,7 @@
   "scripts": {
     "build": "grunt build --base . --gruntfile ../../tools/gruntfile.js",
     "lint": "tslint --config ../../tools/settings/tslint.json ./source/**/*.ts?",
-    "prepare": "yarn build && yarn lint"
+    "prepare": "yarn build && yarn test && yarn lint"
   },
   "bugs": {
     "url": "https://github.com/ui-fi/kit/issues"
