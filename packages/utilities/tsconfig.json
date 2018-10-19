@@ -1,0 +1,15 @@
+{
+  "extends": "../../tools/settings/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./library/",
+    "rootDir": "./source/",
+    "baseUrl": "./source/", 
+  },
+  "include": [
+    "source/**/*.tsx",
+    "source/**/*.ts"
+  ],
+  "exclude": [
+    "source/**/*.spec.ts"
+  ]
+}

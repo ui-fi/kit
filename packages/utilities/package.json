@@ -1,9 +1,9 @@
 {
-  "name": "@ui-fi/experimental",
+  "name": "@ui-fi/utilities",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
-  "homepage": "https://github.com/ui-fi/packages#readme",
+  "homepage": "https://github.com/ui-fi/kit#readme",
   "license": "ISC",
   "main": "library/exports.js",
   "files": [
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ui-fi/packages.git"
+    "url": "git+https://github.com/ui-fi/kit.git"
   },
   "scripts": {
     "build": "tsc",
@@ -22,15 +22,6 @@
     "prepublish": "yarn build && yarn lint"
   },
   "bugs": {
-    "url": "https://github.com/ui-fi/packages/issues"
-  },
-  "dependencies": {
-    "@ui-fi/basic": "^0.1.0",
-    "@ui-fi/decorations": "^0.1.0",
-    "@ui-fi/utilities": "^0.1.0",
-    "react": "^16.5.2"
-  },
-  "devDependencies": {
-    "@types/react": "^16.4.18"
+    "url": "https://github.com/ui-fi/kit/issues"
   }
 }

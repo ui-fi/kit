@@ -10,6 +10,7 @@ import React from 'react';
 
 //  UI-FI
 import { ContentFrame } from '@ui-fi/decorations';
+import { ensure } from '@ui-fi/utilities';
 
 /**********************************************************************************************************************/
 /*      DECLARATIONS                                                                                                  */
@@ -66,13 +67,8 @@ class GuidedContentFrame extends React.Component<GuidedContentFrameProperties> {
     }
 
     private _getClassSuffixes(): string[] {
-        const suffixes = SUFFIX_BY_FIELD_LENGTH[this._width.length];
-
-        if (!suffixes) {
-            throw Error(`Unexpected error: incorrect width ${this._width.length}`);
-        }
-
-        return suffixes;
+        return ensure(SUFFIX_BY_FIELD_LENGTH[this._width.length],
+            `Unexpected error: incorrect width ${this._width.length}`);
     }
 
     private _composeClassName(prefix: string, suffix: string, guide: string): string {
