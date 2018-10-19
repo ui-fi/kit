@@ -1,6 +1,6 @@
 {
   "name": "@ui-fi/basic",
-  "version": "0.1.0",
+  "version": "0.1.1-beta.0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
   "homepage": "https://github.com/ui-fi/packages#readme",
@@ -34,8 +34,6 @@
     "@types/react-dom": "^16.0.9",
     "classnames": "^2.2.6",
     "css-loader": "^1.0.0",
-    
-    
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
@@ -50,7 +48,7 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.6",
-    "@ui-fi/core": "^0.1.0",
+    "@ui-fi/core": "^0.1.1-beta.0",
     "classnames": "^2.2.6",
     "react": "^16.5.2"
   }

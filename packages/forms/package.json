@@ -1,6 +1,6 @@
 {
   "name": "@ui-fi/forms",
-  "version": "0.1.0",
+  "version": "0.1.1-beta.0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <contactme@eduardmalakhov.com>",
   "homepage": "https://github.com/ui-fi/packages#readme",
@@ -33,8 +33,6 @@
   },
   "devDependencies": {
     "@types/react": "^16.4.18",
-    
-    
     "ts-lint": "^4.5.1",
     "typescript": "^3.1.3"
   }
