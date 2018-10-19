@@ -4,6 +4,9 @@
   "scripts": {
     "build": "lerna run build",
     "lint": "lerna run lint",
+    "publish:prepatch:beta": "lerna publish --preid beta prepatch",
+    "publish:prepatch:canary": "lerna publish --preid beta --canary prepatch",
+    "publish:canary": "lerna publish --canary",
     "showcase:basic": "cd ./basic/ && yarn showcase"
   },
   "devDependencies": {
