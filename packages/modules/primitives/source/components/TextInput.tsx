@@ -8,6 +8,8 @@
 //  React
 import React, { Attributes } from 'react';
 
+import { noOp } from '@ui-fi/common';
+
 /**********************************************************************************************************************/
 /*      DECLARATIONS                                                                                                  */
 /**********************************************************************************************************************/
@@ -20,16 +22,19 @@ interface ITextInputProperties {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     onClear?: () => void;
     onFill?: () => void;
-};
+}
 
 interface ITextInputState {
     value?: string;
 }
 
-/* tslint:disable-next-line:no-empty */
-const NO_OP_EVENT_TRIGGER = (...args: any[]) => {};
+const NO_OP_EVENT_TRIGGER = noOp;
 
 class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
+    public static readonly defaultProps: ITextInputProperties = {
+        type: 'text',
+    };
+
     constructor(props: ITextInputProperties) {
         super(props);
 
@@ -45,18 +50,17 @@ class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
     public render(): React.ReactNode {
         return (
             <input
+                className="ui-fi__text-input"
                 type={ this.props.type }
                 value={ this.state.value }
-                onChange={ this._changeHandler} />
+                onChange={ this._changeHandler } />
         );
     }
 
     private _handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
         const previousValue = this.state.value;
 
-        this.setState((state: ITextInputState) => ({
-            value: event.target.value,
-        }), () => {
+        this.setState({ value: event.target.value }, () => {
             this._clearEventTrigger(!!previousValue && !event.target.value);
             this._fillEventTrigger(!previousValue && !!event.target.value);
             this._changeEventTrigger(event);

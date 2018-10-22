@@ -7,4 +7,4 @@ export * from '@ui-fi/layouts';
 export * from '@ui-fi/practicies';
 export * from '@ui-fi/primitives';
 export * from '@ui-fi/responsive';
-export * from '@ui-fi/utilities';
+export * from '@ui-fi/common';

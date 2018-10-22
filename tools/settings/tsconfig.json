@@ -1,66 +1,15 @@
 {
   "compilerOptions": {
-    
-    "target": "es6",                          
-    "module": "commonjs",                     
-    
-    
-    
-     "jsx": "react",                     
-    "declaration": true,                   
-    
-    
-    
-    "outDir": "./library/",                        
-    "rootDir": "./source/",                       
-    
-    
-    
-    
-    
-    
-
-    
-    "strict": true,                           
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    // 
-    
-
-    
-    
-    "baseUrl": "./source/", 
-    
-    
-    
-    
-    
-    "esModuleInterop": true                   
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "declaration": true,
+    "outDir": "./library/",
+    "rootDir": "./source/",
+    "strict": true,
+    "baseUrl": "./source/",
+    "esModuleInterop": true
   },
-  "include": [
-    "source/**/*.tsx",
-    "source/**/*.ts"
-  ],
-  "exclude": [
-    "source/**/*.spec.ts"
-  ]
+  "include": ["source/**/*.tsx", "source/**/*.ts"],
+  "exclude": ["source/**/*.spec.ts"]
 }

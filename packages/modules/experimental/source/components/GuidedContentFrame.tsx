@@ -9,8 +9,8 @@
 import React from 'react';
 
 //  UI-FI
+import { ensure } from '@ui-fi/common';
 import { ContentFrame } from '@ui-fi/decorations';
-import { ensure } from '@ui-fi/utilities';
 
 /**********************************************************************************************************************/
 /*      DECLARATIONS                                                                                                  */
@@ -22,13 +22,13 @@ type ContentFrameWidthGuide = 'ultra-thin' | 'extra-thin' | 'thin' | 'medium'
 type UniformContentFrameWidth = ContentFrameWidthGuide | [ContentFrameWidthGuide];
 type TwoPartContentFrameWidth = [ContentFrameWidthGuide, ContentFrameWidthGuide];
 type FourPartContentFrameWidth = [ContentFrameWidthGuide, ContentFrameWidthGuide
-    , ContentFrameWidthGuide, ContentFrameWidthGuide];
+    ,                             ContentFrameWidthGuide, ContentFrameWidthGuide];
 
 type ContentFrameWidth = UniformContentFrameWidth | TwoPartContentFrameWidth | FourPartContentFrameWidth;
 
-type GuidedContentFrameProperties = {
+interface IGuidedContentFrameProperties {
     width?: ContentFrameWidth;
-};
+}
 
 const CLASS_NAME_PREFIX = 'ui-fi__content-frame__width';
 
@@ -42,8 +42,8 @@ const SUFFIX_BY_FIELD_LENGTH: { [index: number]: string[] } = {
     4: FOUR_PART_CLASS_NAME_SUFFIXES,
 };
 
-class GuidedContentFrame extends React.Component<GuidedContentFrameProperties> {
-    constructor(props: GuidedContentFrameProperties) {
+class GuidedContentFrame extends React.Component<IGuidedContentFrameProperties> {
+    constructor(props: IGuidedContentFrameProperties) {
         super(props);
 
         //  Convert width to an array even when it is a scalar value or undefined

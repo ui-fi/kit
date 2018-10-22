@@ -3,7 +3,7 @@
     "packages/modules/*",
     "packages/kit",
     "packages/showcase",
-    "packages/utilities"
+    "packages/utilities/*"
   ],
   "version": "0.1.1-beta.0",
   "npmClient": "yarn"

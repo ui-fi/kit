@@ -9,6 +9,9 @@
   "files": [
     "library"
   ],
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "publishConfig": {
     "access": "private"
   },
@@ -20,9 +23,18 @@
     "url": "https://github.com/ui-fi/packages/issues"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/jsdom": "^12.2.0",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.3",
     "grunt-ts": "^6.0.0-beta.21",
+    "jsdom": "^12.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "ts-lint": "^4.5.1",
     "ts-node": "^7.0.1",
+    "typemoq": "^2.1.0",
     "typescript": "^3.1.3"
   },
   "gitHead": "9311bb0f16b5442b8ab1ed8bd07fad7f697d512c",
