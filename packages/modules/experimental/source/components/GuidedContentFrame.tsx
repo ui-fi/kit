@@ -17,7 +17,7 @@ import { ContentFrame } from '@ui-fi/decorations';
 /**********************************************************************************************************************/
 
 type ContentFrameWidthGuide = 'ultra-thin' | 'extra-thin' | 'thin' | 'medium'
-    | 'thick' | 'extra-think' | 'ultra-thick';
+    | 'thick' | 'extra-thick' | 'ultra-thick';
 
 type UniformContentFrameWidth = ContentFrameWidthGuide | [ContentFrameWidthGuide];
 type TwoPartContentFrameWidth = [ContentFrameWidthGuide, ContentFrameWidthGuide];

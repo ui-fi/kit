@@ -8,6 +8,9 @@
 //  React
 import React, { Attributes } from 'react';
 
+import debounce from 'debounce';
+import moment from 'moment';
+
 import { noOp } from '@ui-fi/common';
 
 /**********************************************************************************************************************/
@@ -19,6 +22,7 @@ type TextInputType = 'text' | 'password';
 interface ITextInputProperties {
     type?: TextInputType;
     value?: string;
+    debouncePeriod?: moment.Duration | 0;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     onClear?: () => void;
     onFill?: () => void;
@@ -30,8 +34,11 @@ interface ITextInputState {
 
 const NO_OP_EVENT_TRIGGER = noOp;
 
+type ChangeEventHandler = (event: React.ChangeEvent<HTMLInputElement>) => void;
+
 class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
     public static readonly defaultProps: ITextInputProperties = {
+        debouncePeriod: 0,
         type: 'text',
     };
 
@@ -41,6 +48,13 @@ class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
         this.state = {
             value: props.value,
         };
+
+        this._debouncePeriodMsec = props.debouncePeriod && props.debouncePeriod.milliseconds() || 0;
+
+        this._immediateChangeHandler = this._handleChangeImmediate.bind(this);
+
+        this._changeHandler = debounce<ChangeEventHandler>(
+            this._immediateChangeHandler, this._debouncePeriodMsec);
 
         this._clearEventTrigger = props.onClear || NO_OP_EVENT_TRIGGER;
         this._fillEventTrigger = props.onFill || NO_OP_EVENT_TRIGGER;
@@ -57,7 +71,7 @@ class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
         );
     }
 
-    private _handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    private _handleChangeImmediate(event: React.ChangeEvent<HTMLInputElement>): void {
         const previousValue = this.state.value;
 
         this.setState({ value: event.target.value }, () => {
@@ -69,9 +83,12 @@ class TextInput extends React.Component<ITextInputProperties, ITextInputState> {
 
     private _clearEventTrigger: (condition: boolean) => void;
     private _fillEventTrigger: (condition: boolean) => void;
-    private _changeEventTrigger: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    private _changeEventTrigger: ChangeEventHandler;
 
-    private _changeHandler = this._handleChange.bind(this);
+    private _debouncePeriodMsec: number;
+
+    private _changeHandler: ChangeEventHandler;
+    private _immediateChangeHandler: ChangeEventHandler;
 }
 
 /**********************************************************************************************************************/

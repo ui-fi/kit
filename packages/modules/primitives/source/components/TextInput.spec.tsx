@@ -9,6 +9,7 @@ import React, { ChangeEvent } from 'react';
 import { expect } from 'chai';
 import { configure, mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import moment from 'moment';
 
 import { TextInput, TextInputType } from './TextInput';
 
@@ -86,6 +87,35 @@ describe('<TextInput />', () => {
 
                 component.simulate('change', { target: { value: VALUE } });
             });
+        });
+    });
+
+    it('Debounces change events by a given period', async () => {
+        const VALUE: string = 'VALUE';
+        const DEBOUNCE_PERIOD: moment.Duration = moment.duration(200, 'milliseconds');
+
+        let eventTriggerMoment: moment.Moment;
+        let eventHandlerCallMoment: moment.Moment;
+
+        return new Promise<React.ChangeEvent<HTMLInputElement>>((resolve, reject) => {
+            const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+                eventHandlerCallMoment = moment();
+
+                resolve(event);
+            };
+
+            const component = shallow(
+                <TextInput
+                    debouncePeriod={ DEBOUNCE_PERIOD }
+                    onChange={ changeHandler } />,
+            );
+
+            eventTriggerMoment = moment();
+
+            component.simulate('change', { target: { value: VALUE } });
+        }).then((event: React.ChangeEvent<HTMLInputElement>) => {
+            expect(eventHandlerCallMoment.diff(eventTriggerMoment, 'milliseconds'))
+                .to.be.greaterThan(DEBOUNCE_PERIOD.milliseconds());
         });
     });
 });
